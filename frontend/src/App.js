@@ -26,15 +26,22 @@ function App() {
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
-      async () => {
-        const geoResp = await axios.get('https://get.geojs.io/v1/ip/geo.json');
-        fetchBands(geoResp.data.city);
+      () => {
+        loadCityFromIP();
       },
-      async () => {
-        const geoResp = await axios.get('https://get.geojs.io/v1/ip/geo.json');
-        fetchBands(geoResp.data.city);
+      () => {
+        loadCityFromIP();
       }
     );
+
+    async function loadCityFromIP() {
+      try {
+        const geoResp = await axios.get('https://get.geojs.io/v1/ip/geo.json');
+        fetchBands(geoResp.data.city);
+      } catch (err) {
+        console.error('Failed to fetch city by IP:', err);
+      }
+    }
   }, []);
 
   return (
