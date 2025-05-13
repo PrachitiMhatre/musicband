@@ -4,7 +4,7 @@ A full-stack application that allows users to search for music bands founded in 
 
 ---
 
-## 📦 Tech Stack
+## Tech Stack
 
 - **Backend**: Ruby on Rails (`musicbands-api/`)
 - **Frontend**: React (`musicbands-api/frontend/`)
@@ -15,7 +15,7 @@ A full-stack application that allows users to search for music bands founded in 
 
 ---
 
-## 📚 Features
+## Features
 
 - 🔍 Search for up to **50 bands** founded in a given city in the last **10 years**
 - 🌍 Detect user’s location via **browser geolocation**
@@ -79,20 +79,13 @@ rails server
 ```
 Visit http://localhost:3000
 
+## Running Test Cases
 
-## 🔍 How It Works
-1. City-Based Search
-User enters a city name
+This project uses **RSpec** for testing.
 
-React sends GET /api/bands?city=CityName to the Rails backend
-
-Backend queries MusicBrainz for bands from that area founded in the last 10 years
-
-2. Auto Location Detection
-React uses browser's navigator.geolocation
-
-If denied, it falls back to:
+To run all tests:
 
 ```bash
-https://get.geojs.io/v1/ip/geo.json
+bundle exec rspec
 ```
+
