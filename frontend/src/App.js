@@ -16,7 +16,6 @@ function App() {
       setBands(response.data);
     } catch (error) {
       console.error(error);
-      alert('Failed to fetch bands');
     } finally {
       setLoading(false);
     }
