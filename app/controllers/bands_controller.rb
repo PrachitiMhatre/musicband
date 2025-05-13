@@ -1,7 +1,7 @@
 class BandsController < ApplicationController
   require 'httparty'
 
-  USER_AGENT = { "User-Agent" => "MusicBandsApp/1.0 (your.email@example.com)" }.freeze
+  USER_AGENT = { "User-Agent" => "MusicBandsApp/1.0" }.freeze
 
   def index
     city = params[:city]
