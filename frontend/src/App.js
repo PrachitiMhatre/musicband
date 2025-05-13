@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3000';
+const isLocal = window.location.hostname === 'localhost';
+const BACKEND_URL = isLocal
+  ? 'http://localhost:3000'
+  : 'https://musicband-production.up.railway.app'
+
 
 function App() {
   const [city, setCity] = useState('');
