@@ -8,4 +8,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  get '*path', to: 'static#index', constraints: ->(req) do
+    !req.xhr? && req.format.html?
+  end
+
 end
