@@ -88,4 +88,10 @@ To run all tests:
 ```bash
 bundle exec rspec
 ```
+## 🚀 Deployment
+
+This project is deployed on **Railway**.
+
+🔗 **Live URL**: [https://musicband-production.up.railway.app/](https://musicband-production.up.railway.app/)
+
 
